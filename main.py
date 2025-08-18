@@ -1,8 +1,12 @@
 import yt_dlp
 
-# playlist_toggle = input('Is it a playlist? (write "True" or "False"):\n')
+# playlist_toggle = input('Is it a playlist? Write "True" or "False":\n')
 # while playlist_toggle != "True" and playlist_toggle != "False":
 #    playlist_toggle = input('Invalid input, please write "True" or "False"\n')
+
+format = input("Choose one of the formats for converting (.mp3 .wav):\n")
+while format != ".mp3" and format != ".wav":
+    format = input("Invalid option, please enter another format:\n")
 
 
 def download_video_as_mp3(video_url, save_path="loot/"):
@@ -13,7 +17,7 @@ def download_video_as_mp3(video_url, save_path="loot/"):
         "postprocessors": [
             {  # Post-process to convert audio to MP3
                 "key": "FFmpegExtractAudio",
-                "preferredcodec": "mp3",  # Convert to MP3 format
+                "preferredcodec": format,  # Convert to MP3 format
                 "preferredquality": "320",  # Use high quality (320 kbps)
             }
         ],
