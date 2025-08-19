@@ -4,8 +4,8 @@ import yt_dlp
 # while playlist_toggle != "True" and playlist_toggle != "False":
 #    playlist_toggle = input('Invalid input, please write "True" or "False"\n')
 
-format = input("Choose one of the formats for converting (.mp3 .wav):\n")
-while format != ".mp3" and format != ".wav":
+format = input("Choose one of the formats for converting (type mp3 or wav):\n")
+while format != "mp3" and format != "wav":
     format = input("Invalid option, please enter another format:\n")
 
 
