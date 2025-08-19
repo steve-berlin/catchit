@@ -4,12 +4,23 @@ import yt_dlp
 # while playlist_toggle != "True" and playlist_toggle != "False":
 #    playlist_toggle = input('Invalid input, please write "True" or "False"\n')
 
-format = input("Choose one of the formats for converting (type mp3 or wav):\n")
-while format != "mp3" and format != "wav":
+format = input(
+    "Choose one of the formats for converting (type mp3 , wav , m4a, mkv or mp4):\n"
+)
+while (
+    format != "mp3"
+    and format != "wav"
+    and format != "m4a"
+    and format != "mp4"
+    and format != "mkv"
+):
     format = input("Invalid option, please enter another format:\n")
+path = input("Provide path:\n")
+if path is None:
+    path = "loot/"
 
 
-def download_video_as_mp3(video_url, save_path="loot/"):
+def download_video_as_mp3(video_url, save_path=path):
     # Define the options for yt-dlp
     ydl_opts = {
         "noplaylist": False,  # bool(playlist_toggle),
