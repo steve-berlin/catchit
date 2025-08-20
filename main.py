@@ -1,11 +1,12 @@
 import yt_dlp
+import catchrc as crc
 
 # playlist_toggle = input('Is it a playlist? Write "True" or "False":\n')
 # while playlist_toggle != "True" and playlist_toggle != "False":
 #    playlist_toggle = input('Invalid input, please write "True" or "False"\n')
 
 format = input(
-    "Choose one of the formats for converting (type mp3 , wav , m4a, mkv or mp4):\n"
+    "Choose one of the formats for converting (type mp3, wav, m4a, webm, mkv or mp4):\n"
 )
 while (
     format != "mp3"
@@ -13,11 +14,12 @@ while (
     and format != "m4a"
     and format != "mp4"
     and format != "mkv"
+    and format != "webm"
 ):
     format = input("Invalid option, please enter another format:\n")
 path = input("Provide path:\n")
 if path is None:
-    path = "loot/"
+    path = crc.path
 
 
 def download_video_as_mp3(video_url, save_path=path):
@@ -41,4 +43,6 @@ def download_video_as_mp3(video_url, save_path=path):
 
 # Example usage
 url = input("URL here: ")
+if url is None:
+    url = crc.url
 download_video_as_mp3(url)

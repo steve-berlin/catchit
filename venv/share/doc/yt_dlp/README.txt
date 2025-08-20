@@ -93,6 +93,9 @@ Alternatives
   yt-dlp_x86.exe                      Windows (Win8+) standalone x86
                                       (32-bit) binary
 
+  yt-dlp_arm64.exe                    Windows (Win10+) standalone arm64
+                                      (64-bit) binary
+
   yt-dlp_linux                        Linux standalone x64 binary
 
   yt-dlp_linux_armv7l                 Linux standalone armv7l (32-bit)
@@ -101,14 +104,17 @@ Alternatives
   yt-dlp_linux_aarch64                Linux standalone aarch64 (64-bit)
                                       binary
 
-  yt-dlp_win.zip                      Unpackaged Windows executable (no
-                                      auto-update)
+  yt-dlp_win.zip                      Unpackaged Windows (Win8+) x64
+                                      executable (no auto-update)
+
+  yt-dlp_win_x86.zip                  Unpackaged Windows (Win8+) x86
+                                      executable (no auto-update)
+
+  yt-dlp_win_arm64.zip                Unpackaged Windows (Win10+) arm64
+                                      executable (no auto-update)
 
   yt-dlp_macos.zip                    Unpackaged MacOS (10.15+)
                                       executable (no auto-update)
-
-  yt-dlp_macos_legacy                 MacOS (10.9+) standalone x64
-                                      executable
   -----------------------------------------------------------------------
 
 Misc
@@ -2247,9 +2253,9 @@ youtube
     Will overwrite any default ones set by yt-dlp.
 -   player_js_variant: The player javascript variant to use for
     signature and nsig deciphering. The known variants are: main, tce,
-    tv, tv_es6, phone, tablet. Only main is recommended as a possible
-    workaround; the others are for debugging purposes. The default is to
-    use what is prescribed by the site, and can be selected with actual
+    tv, tv_es6, phone, tablet. The default is main, and the others are
+    for debugging purposes. You can use actual to go with what is
+    prescribed by the site
 -   comment_sort: top or new (default) - choose comment sorting mode (on
     YouTube's side)
 -   max_comments: Limit the amount of comments to gather.
@@ -2291,6 +2297,9 @@ youtube
     requires one for the given context), never (never fetch a PO Token),
     or auto (default; only fetch a PO Token if the client requires one
     for the given context)
+-   playback_wait: Duration (in seconds) to wait inbetween the
+    extraction and download stages in order to ensure the formats are
+    available. The default is 6 seconds
 
 youtubepot-webpo
 
