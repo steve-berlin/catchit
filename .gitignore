@@ -1,4 +1,4 @@
 loot/
 venv/
 catchrc.py
-
+__pycache__
